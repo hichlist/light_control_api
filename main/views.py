@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from rest_framework import generics
+from .serializers import LampPostSerializer
 
-# Create your views here.
+
+class LampPostCreateView(generics.CreateAPIView):
+    serializer_class = LampPostSerializer
+

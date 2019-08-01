@@ -5,4 +5,4 @@ from .models import LampPost
 class LampPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = LampPost
-        fields = '__all__'
+        fields = ('lamp_number', 'brightness', 'is_on', 'on_time', 'off_time')

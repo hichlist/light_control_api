@@ -20,7 +20,6 @@ class LampPostCreateView(generics.CreateAPIView):
         else:
             request.POST._mutable = True
             request.POST['off_time'] = datetime.now()
-            request.POST['brightness'] = 0
 
         return self.create(request, *args, **kwargs)
 
@@ -35,3 +34,4 @@ class LampPostUpdateView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = LampPostSerializer
     queryset = LampPost.objects.all()
     permission_classes = (IsAuthenticated, )
+    # TODO Сделать реализацию изменения параметров лампы
